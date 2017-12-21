@@ -13,7 +13,7 @@ def get_largest_number(numbers):
     :param numbers: List containing corresponding numbers
     :return: Largest number found
     """
-    return max(numbers)  # <--- remove this `pass` and put your code here
+    pass  # <--- remove this `pass` and put your code here
 
 
 def get_smallest_number(numbers):
@@ -314,7 +314,7 @@ def join_strings(strings):
     :param strings: List of strings to be concatenated
     :return: Concatenated string
     """
-    return ",".join(strings)
+    pass  # <--- remove this `pass` and put your code here
 
 
 if __name__ == '__main__':
