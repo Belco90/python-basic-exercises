@@ -7,13 +7,13 @@ def get_largest_number(numbers):
         >>> print get_largest_number([4, 500, 250, 499.9, 4.1, 3.9])
         500
 
-        >>> print get_largest_number([1, 2, 4, 4, -1, 3, 1])
+        >>> print get_largest_number([1, 2, 4, 4, -3, 3, 1, -1])
         4
 
     :param numbers: List containing corresponding numbers
     :return: Largest number found
     """
-    pass  # <--- remove this `pass` and put your code here
+    return max(numbers)  # <--- remove this `pass` and put your code here
 
 
 def get_smallest_number(numbers):
@@ -25,8 +25,8 @@ def get_smallest_number(numbers):
         >>> print get_smallest_number([4, 500, 250, 499.9, 4.1, 3.9])
         3.9
 
-        >>> print get_smallest_number([1, 2, 4, 4, -1, 3, 1])
-        -1
+        >>> print get_smallest_number([1, 2, 4, 4, -3, 3, 1, -1])
+        -3
 
     :param numbers: List containing corresponding numbers
     :return: Smallest number found
@@ -43,6 +43,9 @@ def get_even_numbers(numbers):
         >>> print get_even_numbers([1, 3, 3, 0, 4, 5, 17, 22, 209, 100, -2, -7, -90])
         [0, 4, 22, 100, -2, -90]
 
+        >>> print get_even_numbers([1, 15, 27, -3, -5])
+        []
+
     :param numbers: - List containing corresponding numbers
     :return: New list containing all even numbers found
     """
@@ -58,6 +61,9 @@ def filter_even_numbers(numbers):
         >>> print filter_even_numbers([1, 3, 3, 0, 4, 5, 17, 22, 209, 100, -2, -7, -90])
         None
 
+        >>> print get_even_numbers([1, 15, 27, -3, -5])
+        None
+
     :param numbers: List containing corresponding numbers
     :return: Nothing
     """
@@ -65,7 +71,7 @@ def filter_even_numbers(numbers):
 
 
 def draw_solid_rectangle(x, y):
-    """Draws a solid rectangle made of * symbols with `x` columns and `y` rows.
+    """Generates a string with a solid rectangle made of * symbols with `x` columns and `y` rows.
 
     Examples:
         >>> print draw_solid_rectangle(1, 1)
@@ -106,7 +112,7 @@ def draw_solid_rectangle(x, y):
 
 
 def draw_rectangle_borders(x, y):
-    """Draws rectangle borders made of * symbols with `x` columns and `y` rows.
+    """Generates a string with a rectangle borders made of * symbols with `x` columns and `y` rows.
 
     Examples:
         >>> print draw_rectangle_borders(1, 1)
@@ -146,16 +152,42 @@ def draw_rectangle_borders(x, y):
     pass  # <--- remove this `pass` and put your code here
 
 
-def chars_counter(word):
-    """Counts number of times each char appears in a word.
+def draw_pyramid(height):
+    """Generates a string with a pyramid made of * symbols and `height` rows.
+
+    Examples:
+        >>> print draw_pyramid(1)
+        *
+
+        >>> print draw_pyramid(2)
+         *
+        ***
+
+        >>> print draw_pyramid(5)
+            *
+           ***
+          *****
+         *******
+        *********
+
+    :param height: Number of rows (height)
+    :return: String containing corresponding pyramid
+    """
+    pass  # <--- remove this `pass` and put your code here
+
+
+def chars_counter(string):
+    """Counts number of times each char appears in a string.
 
     You CANNOT use `collections.Counter` class.
+
+    Note that uppercase and lowercase are different letters (e.g. 'A' is different from 'a')
 
     Examples:
         >>> print chars_counter("hello world!")
         {'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1, '!': 1}
 
-    :param word: String to count chars
+    :param string: String to count chars
     :return: Dictionary with char and counter key-value pairs
     """
     pass  # <--- remove this `pass` and put your code here
@@ -167,11 +199,11 @@ def sort_list_ascending(elements):
     You CANNOT use `sorted` built-in method.
 
     Examples:
-        >>> print sort_list_ascending([6, 4, 3, 1, 1, 2, 0 , -1, 15, 7])
+        >>> print sort_list_ascending([6, 4, 3, 1, 1, 2, 0, -1, 15, 7])
         [-1, 0, 1, 1, 2, 3, 4, 6, 7, 15]
 
-        >>> print sort_list_ascending(['b', 'c', 'a', 'A', 'e'])
-        ['A', 'a', 'b', 'c', 'e']
+        >>> print sort_list_ascending(['b', 'Z' 'c', 'a', 'A', 'e'])
+        ['A', 'Z 'a', 'b', 'c', 'e']
 
     :param elements: List of elements to be sorted
     :return: New list with elements sorted
@@ -201,6 +233,9 @@ def check_date(day, month, year):
 
         >>> print check_date(30, 13, 1991)
         False
+
+        >>> print check_date(31, 5, 1989)
+        True
 
         >>> print check_date(31, 4, 1989)
         False
@@ -279,7 +314,7 @@ def join_strings(strings):
     :param strings: List of strings to be concatenated
     :return: Concatenated string
     """
-    pass  # <--- remove this `pass` and put your code here
+    return ",".join(strings)
 
 
 if __name__ == '__main__':
