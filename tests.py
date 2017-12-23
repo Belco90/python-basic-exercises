@@ -200,6 +200,24 @@ class DrawSolidRectangleTestCase(unittest.TestCase):
 
         self.assertEqual(expected_result, result)
 
+    def test_draw_solid_rectangle_1x5(self):
+        expected_result = ("*\n"
+                           "*\n"
+                           "*\n"
+                           "*\n"
+                           "*")
+
+        result = exercises.draw_solid_rectangle(1, 5)
+
+        self.assertEqual(expected_result, result)
+
+    def test_draw_solid_rectangle_5x1(self):
+        expected_result = "*****"
+
+        result = exercises.draw_solid_rectangle(5, 1)
+
+        self.assertEqual(expected_result, result)
+
 
 class DrawRectangleBordersTestCase(unittest.TestCase):
     def test_draw_rectangle_borders_1x1(self):
@@ -249,6 +267,24 @@ class DrawRectangleBordersTestCase(unittest.TestCase):
                            "*********")
 
         result = exercises.draw_rectangle_borders(9, 5)
+
+        self.assertEqual(expected_result, result)
+
+    def test_draw_rectangle_borders_1x5(self):
+        expected_result = ("*\n"
+                           "*\n"
+                           "*\n"
+                           "*\n"
+                           "*")
+
+        result = exercises.draw_rectangle_borders(1, 5)
+
+        self.assertEqual(expected_result, result)
+
+    def test_draw_rectangle_borders_5x1(self):
+        expected_result = "*****"
+
+        result = exercises.draw_rectangle_borders(5, 1)
 
         self.assertEqual(expected_result, result)
 
@@ -377,7 +413,7 @@ class SortListAscendingTestCase(unittest.TestCase):
 
     def test_sort_list_ascending_letters(self):
         try:
-            data = ['b', 'Z' 'c', 'a', 'A', 'e']
+            data = ['b', 'Z', 'c', 'a', 'A', 'e']
             original_data = data[:]
 
             result = exercises.sort_list_ascending(data)
@@ -405,13 +441,13 @@ class CheckDateTestCase(unittest.TestCase):
 
     def test_check_date_valid_case_1(self):
         try:
-            self.assertEqual(True, exercises.check_date(1, 1, 1))
+            self.assertEqual(True, exercises.check_date(31, 1, 1))
         except ForbiddenError as err:
             self.assertEqual("You CANNOT use `datetime`module", err.message)
 
     def test_check_date_valid_case_2(self):
         try:
-            self.assertEqual(True, exercises.check_date(4, 9, 1990))
+            self.assertEqual(True, exercises.check_date(30, 9, 1990))
         except ForbiddenError as err:
             self.assertEqual("You CANNOT use `datetime`module", err.message)
 
@@ -433,15 +469,21 @@ class CheckDateTestCase(unittest.TestCase):
         except ForbiddenError as err:
             self.assertEqual("You CANNOT use `datetime`module", err.message)
 
+    def test_check_date_invalid_month_lt_1(self):
+        try:
+            self.assertEqual(False, exercises.check_date(30, 0, 1991))
+        except ForbiddenError as err:
+            self.assertEqual("You CANNOT use `datetime`module", err.message)
+
     def test_check_date_invalid_month_without_31_days(self):
         try:
-            self.assertEqual(False, exercises.check_date(31, 5, 1989))
+            self.assertEqual(False, exercises.check_date(31, 4, 1989))
         except ForbiddenError as err:
             self.assertEqual("You CANNOT use `datetime`module", err.message)
 
     def test_check_date_valid_month_with_31_days(self):
         try:
-            self.assertEqual(True, exercises.check_date(31, 4, 1989))
+            self.assertEqual(True, exercises.check_date(31, 5, 1989))
         except ForbiddenError as err:
             self.assertEqual("You CANNOT use `datetime`module", err.message)
 

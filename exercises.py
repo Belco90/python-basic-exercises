@@ -226,7 +226,7 @@ def sort_list_ascending(elements):
         >>> print sort_list_ascending([6, 4, 3, 1, 1, 2, 0, -1, 15, 7])
         [-1, 0, 1, 1, 2, 3, 4, 6, 7, 15]
 
-        >>> print sort_list_ascending(['b', 'Z' 'c', 'a', 'A', 'e'])
+        >>> print sort_list_ascending(['b', 'Z', 'c', 'a', 'A', 'e'])
         ['A', 'Z 'a', 'b', 'c', 'e']
 
     :param elements: List of elements to be sorted
