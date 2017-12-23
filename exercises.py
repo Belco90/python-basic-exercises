@@ -176,6 +176,30 @@ def draw_pyramid(height):
     pass  # <--- remove this `pass` and put your code here
 
 
+def draw_inverted_pyramid(height):
+    """Generates a string with a inverted pyramid made of * symbols and `height` rows.
+
+    Examples:
+        >>> print draw_pyramid(1)
+        *
+
+        >>> print draw_pyramid(2)
+        ***
+         *
+
+        >>> print draw_pyramid(5)
+        *********
+         *******
+          *****
+           ***
+            *
+
+    :param height: Number of rows (height)
+    :return: String containing corresponding inverted pyramid
+    """
+    pass  # <--- remove this `pass` and put your code here
+
+
 def chars_counter(string):
     """Counts number of times each char appears in a string.
 

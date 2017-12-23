@@ -262,21 +262,57 @@ class DrawPyramidTestCase(unittest.TestCase):
         self.assertEqual(expected_result, result)
 
     def test_draw_pyramid_height_2(self):
-        expected_result = """ *
-        ***"""
+        expected_result = (
+            " *\n"
+            "***"
+        )
 
         result = exercises.draw_pyramid(2)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_pyramid_height_5(self):
-        expected_result = """    *
-           ***
-          *****
-         *******
-        *********"""
+        expected_result = (
+            "    *\n"
+            "   ***\n"
+            "  *****\n"
+            " *******\n"
+            "*********"
+        )
 
         result = exercises.draw_pyramid(5)
+
+        self.assertEqual(expected_result, result)
+
+
+class DrawInvertedPyramidTestCase(unittest.TestCase):
+    def test_draw_inverted_pyramid_height_1(self):
+        expected_result = "*"
+
+        result = exercises.draw_inverted_pyramid(1)
+
+        self.assertEqual(expected_result, result)
+
+    def test_draw_inverted_pyramid_height_2(self):
+        expected_result = (
+            "***\n"
+            " *"
+        )
+
+        result = exercises.draw_inverted_pyramid(2)
+
+        self.assertEqual(expected_result, result)
+
+    def test_draw_inverted_pyramid_height_5(self):
+        expected_result = (
+            "*********\n"
+            " *******\n"
+            "  *****\n"
+            "   ***\n"
+            "    *"
+        )
+
+        result = exercises.draw_inverted_pyramid(5)
 
         self.assertEqual(expected_result, result)
 
