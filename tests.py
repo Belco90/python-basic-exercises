@@ -94,7 +94,7 @@ class GetSmallestNumberTestCase(unittest.TestCase):
             result = exercises.get_smallest_number(data)
 
             self.assertEqual(3.9, result)
-            self.assertListEqual(original_data, result, ORIGINAL_ARGUMENTS_MODIFIED)
+            self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
             self.assertEqual("You CANNOT use `min` built-in method.", err.message)
 
@@ -135,17 +135,17 @@ class FilterEvenNumbersTestCase(unittest.TestCase):
     def test_filter_even_numbers_with_mixed(self):
         data = [1, 3, 3, 0, 4, 5, 17, 22, 209, 100, -2, -7, -90]
 
-        result = exercises.get_even_numbers(data)
+        result = exercises.filter_even_numbers(data)
 
-        self.assertListEqual(None, result)
-        self.assertListEqual([0, 4, 22, 100, -2, -90], data, ORIGINAL_ARGUMENTS_MODIFIED)
+        self.assertIsNone(None, result)
+        self.assertListEqual([0, 4, 22, 100, -2, -90], data)  # original data modified
 
     def test_filter_even_numbers_only_odd(self):
         data = [1, 15, 27, -3, -5]
 
-        result = exercises.get_even_numbers(data)
+        result = exercises.filter_even_numbers(data)
 
-        self.assertListEqual(None, result)
+        self.assertIsNone(None, result)
         self.assertListEqual([], data)  # original data modified
 
 
@@ -158,43 +158,43 @@ class DrawSolidRectangleTestCase(unittest.TestCase):
         self.assertEqual(expected_result, result)
 
     def test_draw_solid_rectangle_2x2(self):
-        expected_result = """**
-        **"""
+        expected_result = ("**\n"
+                           "**")
 
         result = exercises.draw_solid_rectangle(2, 2)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_solid_rectangle_3x3(self):
-        expected_result = """***
-        ***
-        ***"""
+        expected_result = ("***\n"
+                           "***\n"
+                           "***")
 
         result = exercises.draw_solid_rectangle(3, 3)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_solid_rectangle_5x9(self):
-        expected_result = """*****
-        *****
-        *****
-        *****
-        *****
-        *****
-        *****
-        *****
-        *****"""
+        expected_result = ("*****\n"
+                           "*****\n"
+                           "*****\n"
+                           "*****\n"
+                           "*****\n"
+                           "*****\n"
+                           "*****\n"
+                           "*****\n"
+                           "*****")
 
         result = exercises.draw_solid_rectangle(5, 9)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_solid_rectangle_9x5(self):
-        expected_result = """*********
-        *********
-        *********
-        *********
-        *********"""
+        expected_result = ("*********\n"
+                           "*********\n"
+                           "*********\n"
+                           "*********\n"
+                           "*********")
 
         result = exercises.draw_solid_rectangle(9, 5)
 
@@ -210,43 +210,43 @@ class DrawRectangleBordersTestCase(unittest.TestCase):
         self.assertEqual(expected_result, result)
 
     def test_draw_rectangle_borders_2x2(self):
-        expected_result = """**
-        **"""
+        expected_result = ("**\n"
+                           "**")
 
         result = exercises.draw_rectangle_borders(2, 2)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_rectangle_borders_3x3(self):
-        expected_result = """***
-        * *
-        ***"""
+        expected_result = ("***\n"
+                           "* *\n"
+                           "***")
 
         result = exercises.draw_rectangle_borders(3, 3)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_rectangle_borders_5x9(self):
-        expected_result = """*****
-        *   *
-        *   *
-        *   *
-        *   *
-        *   *
-        *   *
-        *   *
-        *****"""
+        expected_result = ("*****\n"
+                           "*   *\n"
+                           "*   *\n"
+                           "*   *\n"
+                           "*   *\n"
+                           "*   *\n"
+                           "*   *\n"
+                           "*   *\n"
+                           "*****")
 
         result = exercises.draw_rectangle_borders(5, 9)
 
         self.assertEqual(expected_result, result)
 
     def test_draw_rectangle_borders_9x5(self):
-        expected_result = """*********
-        *       *
-        *       *
-        *       *
-        *********"""
+        expected_result = ("*********\n"
+                           "*       *\n"
+                           "*       *\n"
+                           "*       *\n"
+                           "*********")
 
         result = exercises.draw_rectangle_borders(9, 5)
 
