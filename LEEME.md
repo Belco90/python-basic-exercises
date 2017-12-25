@@ -15,8 +15,8 @@ El proyecto está listo para empezar a trabajar en el fichero `exercises.py`, so
 
 1. Acceder a la url del proyecto: https://github.com/Belco90/python-basics-exercises
 2. En la parte superior derecha, clic en el botón **Fork**:
-![fork project](https://i.imgur.com/ZMnnWOb.png) ¡Github os redireccionará al mismo proyecto pero en vuestro propia cuenta! Así podrás trabajar en él y subir tus cambios a tu propio repositorio.
-3. Ahora solo tienes que clonar tu proyecto en tu local, haciendo clic en "Clone or download" y copiando la url que hay dentro; después haces `git clone <url>` en la carpeta de tu ordenador que desees.
+![fork project](https://i.imgur.com/ZMnnWOb.png) ¡Github os redireccionará al mismo proyecto pero en vuestro propia cuenta! Así podrás trabajar en él y subir tus cambios a tu propio repositorio (el proyecto _python-basics-exercises_ habrá aparecido en vuestra cuenta).
+3. Ahora solo tienes que clonar tu proyecto en tu local, haciendo clic en "Clone or download" y copiando la url que hay dentro; después haces `git clone <url>` en la carpeta de tu ordenador que desees (recuerda que si estás usando windows, tendrás que acceder a la carpeta, después hacer clic con botón derecho y seleccionar **Git bash here** antes de clonar el proyecto).
 
 
 ## Manual de ejecución de tests automáticos<div id="execution" />
