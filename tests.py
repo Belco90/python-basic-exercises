@@ -531,11 +531,20 @@ class CheckPalindromeTestCase(unittest.TestCase):
     def test_check_palindrome_valid_case_6(self):
         self.assertEqual(True, exercises.check_palindrome("No 'x' in Nixon"))
 
+    def test_check_palindrome_valid_numbers_case_1(self):
+        self.assertEqual(True, exercises.check_palindrome("1234321"))
+
+    def test_check_palindrome_valid_numbers_case_2(self):
+        self.assertEqual(True, exercises.check_palindrome("123321"))
+
     def test_check_palindrome_invalid_case_1(self):
         self.assertEqual(False, exercises.check_palindrome("nope"))
 
     def test_check_palindrome_invalid_case_2(self):
         self.assertEqual(False, exercises.check_palindrome("Was it a dog or a cat I saw?"))
+
+    def test_check_palindrome_invalid_numbers(self):
+        self.assertEqual(False, exercises.check_palindrome("123421"))
 
 
 class JoinStrings(unittest.TestCase):
