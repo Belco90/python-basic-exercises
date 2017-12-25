@@ -427,89 +427,105 @@ class SortListAscendingTestCase(unittest.TestCase):
 class CheckDateTestCase(unittest.TestCase):
     def setUp(self):
         if hasattr(exercises, 'datetime'):
-            self.original = exercises.datetime
+            self.datetime = exercises.datetime
             exercises.datetime = forbidden_monkey_patch
-        elif hasattr(exercises, 'date'):
-            self.original = exercises.date
+
+        if hasattr(exercises, 'date'):
+            self.date = exercises.date
             exercises.date = forbidden_monkey_patch
+
+        if hasattr(exercises, 'calendar'):
+            self.calendar = exercises.calendar
+            exercises.calendar = forbidden_monkey_patch
+
+        if hasattr(exercises, 'isleap'):
+            self.isleap = exercises.isleap
+            exercises.isleap = forbidden_monkey_patch
 
     def tearDown(self):
         if hasattr(exercises, 'datetime'):
-            exercises.datetime = self.original
-        elif hasattr(exercises, 'date'):
-            exercises.date = self.original
+            exercises.datetime = self.datetime
+
+        if hasattr(exercises, 'calendar'):
+            exercises.calendar = self.calendar
+
+        if hasattr(exercises, 'date'):
+            exercises.date = self.date
+
+        if hasattr(exercises, 'isleap'):
+            exercises.isleap = self.isleap
 
     def test_check_date_valid_case_1(self):
         try:
             self.assertEqual(True, exercises.check_date(31, 1, 1))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_valid_case_2(self):
         try:
             self.assertEqual(True, exercises.check_date(30, 9, 1990))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_negative_year(self):
         try:
             self.assertEqual(False, exercises.check_date(4, 9, -1))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_day_zero(self):
         try:
             self.assertEqual(False, exercises.check_date(0, 9, 1991))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_month_gt_12(self):
         try:
             self.assertEqual(False, exercises.check_date(30, 13, 1991))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_month_lt_1(self):
         try:
             self.assertEqual(False, exercises.check_date(30, 0, 1991))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_month_without_31_days(self):
         try:
             self.assertEqual(False, exercises.check_date(31, 4, 1989))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_valid_month_with_31_days(self):
         try:
             self.assertEqual(True, exercises.check_date(31, 5, 1989))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_february_without_29_days(self):
         try:
             self.assertEqual(False, exercises.check_date(29, 2, 2017))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_invalid_29th_february_even_year_but_not_leap(self):
         try:
             self.assertEqual(False, exercises.check_date(29, 2, 1900))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_valid_29th_february_lap_year_divisible_by_4(self):
         try:
             self.assertEqual(True, exercises.check_date(29, 2, 2020))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
     def test_check_date_valid_29th_february_lap_year_divisible_by_400_and_100(self):
         try:
             self.assertEqual(True, exercises.check_date(29, 2, 2000))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime`module", err.message)
+            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
 
 
 class CheckPalindromeTestCase(unittest.TestCase):
