@@ -1,8 +1,8 @@
 # Ejercicios de repaso Python 2.7
 
-Este proyecto contiene ejercicios en Python 2.7 para practicar los conceptos esenciales del lenguaje: estructuras de control (condiciones y bucles), manipulación de tipos básicos (cadenas, listas y diccionarios) y conceptos, tanto matemáticos como de programación. Se incluyen tests automáticos para comprobar si tu solución es correcta.
+Este proyecto contiene ejercicios en Python 2.7 para practicar las nociones esenciales del lenguaje: estructuras de control (condiciones y bucles), manipulación de tipos básicos (cadenas, listas y diccionarios) y conceptos, tanto matemáticos como de programación. Se incluyen tests automáticos para que puedas comprobar si tu solución es correcta.
 
-El objetivo es resolver cada función y ejecutar los tests hasta que no falle ninguno. Los ejercicios no están ordenados de menor a mayor dificultad, podéis hacerlos en el orden que queráis (si os atascáis, también podéis pasar a otro y volver más tarde).
+El objetivo es resolver cada función y ejecutar los tests hasta que no falle ninguno. Los ejercicios no están ordenados de menor a mayor dificultad, puedes hacerlos en el orden que quieras (si te atascas, también puedes pasar a otro y volver a intentarlo más tarde).
 
 Consta principalmente de dos ficheros:
 - `exercises.py`: Fichero principal. Contiene una plantilla con las diferentes funciones que hay que implementar. Solo tienes que reemplazar el `pass`de cada función por tu código
@@ -20,7 +20,7 @@ El proyecto está listo para empezar a trabajar en el fichero `exercises.py`, so
 1. Acceder a la url del proyecto: https://github.com/Belco90/python-basics-exercises
 2. En la parte superior derecha, clic en el botón **Fork**:
 ![fork project](https://i.imgur.com/ZMnnWOb.png) ¡Github os redireccionará al mismo proyecto pero en vuestra propia cuenta! Así podrás trabajar en él y subir tus cambios a tu propio repositorio (el proyecto _python-basics-exercises_ habrá aparecido en vuestra cuenta).
-3. Ahora solo tienes que clonar tu proyecto en tu local, haciendo clic en **Clone or download** en el proyecto recién duplicado en tu github y copiando la url que hay dentro; después haces `git clone <url>` en la carpeta de tu ordenador que desees. Recuerda que:
+3. Ahora solo tienes que clonar tu proyecto en tu local, haciendo clic en **Clone or download** en el proyecto recién duplicado en tu github (¡no en el mío!) y copiando la url que hay dentro; después haces `git clone <url>` en la carpeta de tu ordenador que desees. Recuerda que:
     - Si estás usando windows, tendrás que acceder a la carpeta, después hacer clic con botón derecho y seleccionar **Git bash here** antes de clonar el proyecto.
     - Si estás usando linux o mac, tendrás que acceder a la carpeta desde el terminal con el comando `cd` antes de clonar el proyecto.
 
