@@ -35,7 +35,7 @@ Tienes varias opciones para ejecutar los tests automáticos:
 ## Descripción de cada función<div id="description" />
 Aquí puedes encontrar una descripción del funcionamiento de cada función.
 
-###get_largest_number(numbers)
+### `get_largest_number(numbers)`
 Obtiene el número más grande de una lista de números recibida.
 
 No puedes usar la función `max` de python ni modificar la lista recibida.
@@ -56,26 +56,26 @@ Mayor número encontrado.
 4
 ```
 
-###get_smallest_number(numbers)
+### `get_smallest_number(numbers)`
 
-###get_even_numbers(numbers)
+### `get_even_numbers(numbers)`
 
-###filter_even_numbers(numbers)
+### `filter_even_numbers(numbers)`
 
-###draw_solid_rectangle(x, y)
+### `draw_solid_rectangle(x, y)`
 
-###draw_rectangle_borders(x, y)
+### `draw_rectangle_borders(x, y)`
 
-###draw_pyramid(height)
+### `draw_pyramid(height)`
 
-###draw_inverted_pyramid(height)
+### `draw_inverted_pyramid(height)`
 
-###chars_counter(string)
+### `chars_counter(string)`
 
-###sort_list_ascending(elements)
+### `sort_list_ascending(elements)`
 
-###check_date(day, month, year)
+### `check_date(day, month, year)`
 
-###check_palindrome(string)
+### `check_palindrome(string)`
 
-###join_strings(strings)
+### `join_strings(strings)`
