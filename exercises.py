@@ -227,7 +227,7 @@ def sort_list_ascending(elements):
         [-1, 0, 1, 1, 2, 3, 4, 6, 7, 15]
 
         >>> print sort_list_ascending(['b', 'Z', 'c', 'a', 'A', 'e'])
-        ['A', 'Z 'a', 'b', 'c', 'e']
+        ['A', 'Z', 'a', 'b', 'c', 'e']
 
     :param elements: List of elements to be sorted
     :return: New list with elements sorted
@@ -238,7 +238,7 @@ def sort_list_ascending(elements):
 def check_date(day, month, year):
     """Checks if received date is valid or not.
 
-    You CANNOT use `datetime` module
+    You CANNOT use `datetime` nor `calendar` modules
 
     Be careful with leap years ;)
 
@@ -313,6 +313,15 @@ def check_palindrome(string):
 
         >>> print check_palindrome("No 'x' in Nixon")
         True
+
+        >>> print check_palindrome("1234321")
+        True
+
+        >>> print check_palindrome("123321")
+        True
+
+        >>> print check_palindrome("123421")
+        False
 
     :param string: String to be checked
     :return: True if string is palindrome, False otherwise
