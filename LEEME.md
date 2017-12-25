@@ -6,6 +6,8 @@ Consta principalmente de dos ficheros:
 - `exercises.py`: Fichero principal. Contiene una plantilla con las diferentes funciones que hay que implementar.
 - `tests.py`: Fichero de tests automáticos que se ejecutan sobre cada función de `exercises.py`.
 
+## Índice
+
 1. [Manual de instalación](#installation)
 2. [Manual de ejecución de tests automáticos](#execution)
 1. [Descripción de cada función](#description)
@@ -31,3 +33,49 @@ Tienes varias opciones para ejecutar los tests automáticos:
 ![rerun tests](https://i.imgur.com/YkHgqee.png)
 
 ## Descripción de cada función<div id="description" />
+Aquí puedes encontrar una descripción del funcionamiento de cada función.
+
+###`get_largest_number(numbers)`
+Obtiene el número más grande de una lista de números recibida.
+
+No puedes usar la función `max` de python ni modificar la lista recibida.
+
+**Argumentos**
+- `numbers`: Lista de números
+
+**Retorno**
+Mayor número encontrado.
+
+**Ejemplos**
+```python
+>>> print get_largest_number([4, 500, 250, 499.9, 4.1, 3.9])
+500
+```
+```python
+>>> print get_largest_number([1, 2, 4, 4, -3, 3, 1, -1])
+4
+```
+
+###`get_smallest_number(numbers)`
+
+###`get_even_numbers(numbers)`
+
+###`filter_even_numbers(numbers)`
+
+###`draw_solid_rectangle(x, y)`
+
+###`draw_rectangle_borders(x, y)`
+
+###`draw_pyramid(height)`
+
+###`draw_inverted_pyramid(height)`
+
+###`chars_counter(string)`
+
+###`sort_list_ascending(elements)`
+
+###`check_date(day, month, year)`
+
+###`check_palindrome(string)`
+
+###`join_strings(strings)`
