@@ -12,7 +12,8 @@ Consta principalmente de dos ficheros:
 
 1. [Manual de instalación](#installation)
 2. [Manual de ejecución de tests automáticos](#execution)
-1. [Descripción de cada función](#description)
+3. [Descripción de cada función](#description)
+4. [Posibles problemas](#problems)
 
 ## Manual de instalación<div id="installation" />
 El proyecto está listo para empezar a trabajar en el fichero `exercises.py`, solo tienes que "duplicar" el proyecto en tu github de esta forma:
@@ -544,3 +545,29 @@ hello,world
 oops
 ```
 
+
+## Posibles problemas<div id="problems" />
+
+### _No python interpreter configured for the project_
+Es posible que veas el mensaje _No python interpreter configured for the project_ dependiendo de la versión de PyCharm que estés utilizando.
+
+![python interpreter none](https://i.imgur.com/K6LaEf4.png)
+
+Si ves alguno de los mensajes señalados en la imagen de arriba al abrir un fichero python del proyecto o intentar ejecutar los tests, entonces tienes que seguir estos pasos:
+
+1. Cierras la ventanita del recuadro rojo 2 en caso de que se te haya abierto.
+2. Clicas en **Configure Python Interpreter** (señalado con la flecha en el recuadro rojo 1) o abres las preferencias y vas al apartado correspondiente (**Preferences --> Project: `nombre de vuestro proyecto` --> Project Interpreter**). Verás una ventana como esta:
+
+![project interpreter](https://i.imgur.com/aFMpocG.png)
+
+3. Ahora clicas en la rueda dentada marcada con la flecha roja y luego en **Add local**. Verás otra ventana como esta:
+
+![add local python interpreter](https://i.imgur.com/nOFEItd.png)
+
+4. Fíjate si en **Base interpreter** tienes ya seleccionada una versión de python. Si no lo está, clica y selecciona cualquiera que sea python 2.7. No hará falta que cambies nada más, simplemente clica en **OK** para crear tu intérprete python. Verás que se está generando y cuando acabe volverás a la ventana anterior con el intérprete generado y seleccionado, tal que así:
+
+![generated local python interpreter](https://i.imgur.com/Orftcn6.png)
+
+5. Vuelve a clicar en **OK** para cerrar la ventana de preferencias y ya deberías tener todo correctamente configurado. Verás que ha aparecido una carpeta `venv` en tu proyecto (puedes ignorarla, ni se va a subir a tu repositorio) y si ahora intentas ejecutar los tests, se lanzarán correctamente:
+
+![run tests successfully](https://i.imgur.com/MuxKkRw.png)
