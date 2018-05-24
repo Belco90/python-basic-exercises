@@ -2,11 +2,11 @@
 
 Este proyecto contiene ejercicios en Python 2.7 para practicar las nociones esenciales del lenguaje: estructuras de control (condiciones y bucles), manipulación de tipos básicos (cadenas, listas y diccionarios) y conceptos, tanto matemáticos como de programación. Se incluyen tests automáticos para que puedas comprobar si tu solución es correcta.
 
-El objetivo es resolver cada función y ejecutar los tests hasta que no falle ninguno. Los ejercicios no están ordenados de menor a mayor dificultad, puedes hacerlos en el orden que quieras (si te atascas, también puedes pasar a otro y volver a intentarlo más tarde).
+El objetivo es completar cada función propuesta para generar la solución deseada, ejecutando los tests hasta que no falle ninguno para saber que la solución desarrollada es válida. Los ejercicios no están ordenados de menor a mayor dificultad, puedes hacerlos en el orden que quieras (si te atascas, también puedes pasar a otro y volver a intentarlo más tarde).
 
 Consta principalmente de dos ficheros:
-- `exercises.py`: Fichero principal. Contiene una plantilla con las diferentes funciones que hay que implementar. Solo tienes que reemplazar el `pass`de cada función por tu código
-- `tests.py`: Fichero de tests automáticos que se ejecutan sobre cada función de `exercises.py`.
+- `exercises.py`: Fichero principal donde tienes que trabajar. Contiene una plantilla con las diferentes funciones que hay que implementar. Solo tienes que reemplazar el `pass` de cada función por tu código
+- `tests.py`: Fichero de tests automáticos que se ejecutan sobre cada función de `exercises.py`. No tienes que modificar este fichero: en él están incluidos los tests que comprobarán si tus soluciones son válidas.
 
 ## Índice
 
@@ -29,6 +29,8 @@ El proyecto está listo para empezar a trabajar en el fichero `exercises.py`, so
 ## Manual de ejecución de tests automáticos<div id="execution" />
 Tienes varias opciones para ejecutar los tests automáticos:
 1. **Desde un terminal.** Si estás usando el terminal y te encuentras en la ruta del proyecto, puedes lanzar los tests con el comando `python tests.py`
+![run tests](https://i.imgur.com/SBNRwum.gif)
+
 2. **Desde pycharm.** Si usas pycharm, solo tienes que abrir el fichero _tests.py_, hacer clic derecho en la pestaña del fichero y seleccionar *Run 'Unittests in tests.py'* en el desplegable.
 ![run tests](https://i.imgur.com/9u5EkP1.png)
 
