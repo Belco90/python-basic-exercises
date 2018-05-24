@@ -28,7 +28,7 @@ El proyecto está listo para empezar a trabajar en el fichero `exercises.py`, so
 
 ## Manual de ejecución de tests automáticos<div id="execution" />
 Tienes varias opciones para ejecutar los tests automáticos:
-1. **Desde un terminal.** Si estás usando el terminal y te encuentras en la ruta del proyecto, puedes lanzar los tests con el comando `python tests.py`
+1. **Desde un terminal.** Si estás usando el terminal y te encuentras en la ruta del proyecto, puedes lanzar los tests con el comando `python tests.py` (verás este mensaje cuando todos los tests pasen correctamente, si no verás un error por cada test fallido explicando qué ha pasado)
 ![run tests](https://i.imgur.com/SBNRwum.gif)
 
 2. **Desde pycharm.** Si usas pycharm, solo tienes que abrir el fichero _tests.py_, hacer clic derecho en la pestaña del fichero y seleccionar *Run 'Unittests in tests.py'* en el desplegable.
