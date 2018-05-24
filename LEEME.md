@@ -263,7 +263,7 @@ Cadena que contiene el borde del rectángulo correspondiente
 ### `draw_pyramid(height)`
 Genera una cadena con una pirámide de `height` filas, hecha con el símbolo _*_.
 
-Tiene que devolver un `str` con la pirámide, no hacer `print` por pantalla.
+Tiene que devolver un `str` con la pirámide (sin espacios al final de cada línea), si simplemente haces `print` por pantalla no funcionará.
 
 **Argumentos:**
 - `height`: Número de filas (altura).
@@ -296,7 +296,7 @@ Cadena con la pirámide correspondiente.
 ### `draw_inverted_pyramid(height)`
 Genera una cadena con una pirámide invertida de `height` filas, hecha con el símbolo _*_.
 
-Tiene que devolver un `str` con la pirámide, no hacer `print` por pantalla.
+Tiene que devolver un `str` con la pirámide (sin espacios al final de cada línea), si simplemente haces `print` por pantalla no funcionará.
 
 **Argumentos:**
 - `height`: Número de filas (altura).
