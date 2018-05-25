@@ -6,13 +6,7 @@ def get_largest_number(numbers):
     :param numbers: List containing corresponding numbers
     :return: Largest number found
     """
-    result = numbers[0]
-
-    for number in numbers:
-        if number > result:
-            result = number
-
-    return result
+    pass  # <--- remove this `pass` and put your code here
 
 
 def get_smallest_number(numbers):
@@ -23,13 +17,7 @@ def get_smallest_number(numbers):
     :param numbers: List containing corresponding numbers
     :return: Smallest number found
     """
-    result = numbers[0]
-
-    for number in numbers:
-        if number < result:
-            result = number
-
-    return result
+    pass  # <--- remove this `pass` and put your code here
 
 
 def get_even_numbers(numbers):
@@ -40,13 +28,7 @@ def get_even_numbers(numbers):
     :param numbers: - List containing corresponding numbers
     :return: New list containing all even numbers found
     """
-    result = []
-
-    for number in numbers:
-        if number % 2 == 0:
-            result.append(number)
-
-    return result
+    pass  # <--- remove this `pass` and put your code here
 
 
 def filter_even_numbers(numbers):
@@ -57,13 +39,7 @@ def filter_even_numbers(numbers):
     :param numbers: List containing corresponding numbers
     :return: Nothing
     """
-    items_removed = 0
-
-    for i in range(len(numbers)):
-        number = numbers[i - items_removed]
-        if number % 2 != 0:
-            numbers.remove(number)
-            items_removed += 1
+    pass  # <--- remove this `pass` and put your code here
 
 
 def draw_solid_rectangle(x, y):
@@ -73,13 +49,7 @@ def draw_solid_rectangle(x, y):
     :param y: Number of rows (height)
     :return: String containing corresponding solid rectangle
     """
-    row = "*" * x
-
-    result = ""
-    for j in range(y):
-        result += (row + "\n")
-
-    return result.strip()
+    pass  # <--- remove this `pass` and put your code here
 
 
 def draw_rectangle_borders(x, y):
@@ -89,31 +59,7 @@ def draw_rectangle_borders(x, y):
     :param y: Number of rows (height)
     :return: String containing corresponding rectangle border
     """
-    outer_row = "*" * x
-    inner_whitespace_row = " " * (x - 2)
-
-    result = ""
-    for j in range(y):
-
-        # last row
-        if j == (y - 1):
-            result += outer_row
-
-        # first row
-        elif j == 0:
-            result += (outer_row + "\n")
-
-        else:
-            new_inner_row = "*"
-
-            if x > 1:
-                new_inner_row += (inner_whitespace_row + "*")
-
-            new_inner_row += "\n"
-
-            result += new_inner_row
-
-    return result
+    pass  # <--- remove this `pass` and put your code here
 
 
 def draw_pyramid(height):
@@ -122,16 +68,7 @@ def draw_pyramid(height):
     :param height: Number of rows (height)
     :return: String containing corresponding pyramid
     """
-    rows = []
-    for i in range(height):
-        index1 = i + 1
-        left_space = " " * (height - index1)
-        number_of_symbols = (index1 * 2) - 1
-        pyramid_slice = "*" * number_of_symbols
-        new_row = left_space + pyramid_slice
-        rows.append(new_row)
-
-    return "\n".join(rows)
+    pass  # <--- remove this `pass` and put your code here
 
 
 def draw_inverted_pyramid(height):
@@ -140,16 +77,7 @@ def draw_inverted_pyramid(height):
     :param height: Number of rows (height)
     :return: String containing corresponding inverted pyramid
     """
-    rows = []
-    for i in range(height):
-        index1 = i + 1
-        left_space = " " * (index1 - 1)
-        number_of_symbols = ((height - i) * 2) - 1
-        pyramid_slice = "*" * number_of_symbols
-        new_row = left_space + pyramid_slice
-        rows.append(new_row)
-
-    return "\n".join(rows)
+    pass  # <--- remove this `pass` and put your code here
 
 
 def chars_counter(string):
@@ -162,15 +90,7 @@ def chars_counter(string):
     :param string: String to count chars
     :return: Dictionary with char and counter key-value pairs
     """
-    result = {}
-
-    for char in string:
-        if char not in result:
-            result[char] = 0
-
-        result[char] += 1
-
-    return result
+    pass  # <--- remove this `pass` and put your code here
 
 
 def sort_list_ascending(elements):
@@ -181,22 +101,7 @@ def sort_list_ascending(elements):
     :param elements: List of elements to be sorted
     :return: New list with elements sorted
     """
-    result = []
-
-    for element in elements:
-        pos = 0
-        found = False
-        while not found and pos < len(result):
-            item = result[pos]
-
-            if element < item:
-                found = True
-            else:
-                pos += 1
-
-        result.insert(pos, element)
-
-    return result
+    pass  # <--- remove this `pass` and put your code here
 
 
 def check_date(day, month, year):
@@ -211,26 +116,7 @@ def check_date(day, month, year):
     :param year: Year number
     :return: True if date is valid, False otherwise
     """
-    if not (1 <= day <= 31):
-        return False
-
-    if not (1 <= month <= 12):
-        return False
-
-    if year < 0:
-        return False
-
-    if month in [4, 6, 9, 11] and day > 30:
-        return False
-
-    elif month == 2:
-        is_leap_year = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
-        if is_leap_year and day > 29:
-            return False
-        elif not is_leap_year and day > 28:
-            return False
-
-    return True
+    pass  # <--- remove this `pass` and put your code here
 
 
 def check_palindrome(string):
@@ -241,14 +127,7 @@ def check_palindrome(string):
     :param string: String to be checked
     :return: True if string is palindrome, False otherwise
     """
-    alphanumeric_string = ""
-    for char in string:
-        if char.isalnum():
-            alphanumeric_string += char
-
-    lower_alphanumeric_string = alphanumeric_string.lower()
-
-    return lower_alphanumeric_string == lower_alphanumeric_string[::-1]
+    pass  # <--- remove this `pass` and put your code here
 
 
 def join_strings(strings):
@@ -259,12 +138,7 @@ def join_strings(strings):
     :param strings: List of strings to be concatenated
     :return: Concatenated string
     """
-    result = ""
-    for string in strings:
-        result += string
-        result += ","
-
-    return result.strip(",")
+    pass  # <--- remove this `pass` and put your code here
 
 
 if __name__ == '__main__':
