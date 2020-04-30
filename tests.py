@@ -1,4 +1,3 @@
-import __builtin__
 import collections
 import unittest
 
@@ -8,7 +7,7 @@ import exercises
 ORIGINAL_ARGUMENTS_MODIFIED = "Original arguments cannot be modified inside your function!"
 
 
-class ForbiddenError(StandardError):
+class ForbiddenError(AssertionError):
     pass
 
 
@@ -47,7 +46,7 @@ class MyStr(str):
 
 class GetLargestNumberTestCase(unittest.TestCase):
     def setUp(self):
-        self.max = __builtin__.max
+        self.max = max
         exercises.max = forbidden_monkey_patch
 
     def tearDown(self):
@@ -63,7 +62,8 @@ class GetLargestNumberTestCase(unittest.TestCase):
             self.assertEqual(500, result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `max` built-in method.", err.message)
+            print("You CANNOT use `max` built-in method.")
+            raise err
 
     def test_get_largest_number_with_negative(self):
         try:
@@ -75,12 +75,13 @@ class GetLargestNumberTestCase(unittest.TestCase):
             self.assertEqual(4, result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `max` built-in method.", err.message)
+            print("You CANNOT use `max` built-in method.")
+            raise err
 
 
 class GetSmallestNumberTestCase(unittest.TestCase):
     def setUp(self):
-        self.min = __builtin__.min
+        self.min = min
         exercises.min = forbidden_monkey_patch
 
     def tearDown(self):
@@ -96,7 +97,8 @@ class GetSmallestNumberTestCase(unittest.TestCase):
             self.assertEqual(3.9, result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `min` built-in method.", err.message)
+            print("You CANNOT use `min` built-in method.")
+            raise err
 
     def test_get_smallest_number_with_negative(self):
         try:
@@ -108,7 +110,8 @@ class GetSmallestNumberTestCase(unittest.TestCase):
             self.assertEqual(-3, result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `min` built-in method.", err.message)
+            print("You CANNOT use `min` built-in method.")
+            raise err
 
 
 class GetEvenNumbersTestCase(unittest.TestCase):
@@ -378,7 +381,8 @@ class CharsCounterTestCase(unittest.TestCase):
 
             self.assertDictEqual(expected_result, result)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `collections.Counter` built-in method.", err.message)
+            print("You CANNOT use `collections.Counter` built-in method.")
+            raise err
 
     def test_chars_counter_lowercase_and_uppercase(self):
         try:
@@ -388,12 +392,13 @@ class CharsCounterTestCase(unittest.TestCase):
 
             self.assertDictEqual(expected_result, result)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `collections.Counter` built-in method.", err.message)
+            print("You CANNOT use `collections.Counter` built-in method.")
+            raise err
 
 
 class SortListAscendingTestCase(unittest.TestCase):
     def setUp(self):
-        self.sorted = __builtin__.sorted
+        self.sorted = sorted
         exercises.sorted = forbidden_monkey_patch
 
     def tearDown(self):
@@ -409,7 +414,8 @@ class SortListAscendingTestCase(unittest.TestCase):
             self.assertListEqual([-1, 0, 1, 1, 2, 3, 4, 6, 7, 15], result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `sorted` built-in method.", err.message)
+            print("You CANNOT use `sorted` built-in method.")
+            raise err
 
     def test_sort_list_ascending_letters(self):
         try:
@@ -421,7 +427,8 @@ class SortListAscendingTestCase(unittest.TestCase):
             self.assertListEqual(['A', 'Z', 'a', 'b', 'c', 'e'], result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `sorted` built-in method.", err.message)
+            print("You CANNOT use `sorted` built-in method.")
+            raise err
 
 
 class CheckDateTestCase(unittest.TestCase):
@@ -459,73 +466,85 @@ class CheckDateTestCase(unittest.TestCase):
         try:
             self.assertEqual(True, exercises.check_date(31, 1, 1))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_valid_case_2(self):
         try:
             self.assertEqual(True, exercises.check_date(30, 9, 1990))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_negative_year(self):
         try:
             self.assertEqual(False, exercises.check_date(4, 9, -1))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_day_zero(self):
         try:
             self.assertEqual(False, exercises.check_date(0, 9, 1991))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_month_gt_12(self):
         try:
             self.assertEqual(False, exercises.check_date(30, 13, 1991))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_month_lt_1(self):
         try:
             self.assertEqual(False, exercises.check_date(30, 0, 1991))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_month_without_31_days(self):
         try:
             self.assertEqual(False, exercises.check_date(31, 4, 1989))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_valid_month_with_31_days(self):
         try:
             self.assertEqual(True, exercises.check_date(31, 5, 1989))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_february_without_29_days(self):
         try:
             self.assertEqual(False, exercises.check_date(29, 2, 2017))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_invalid_29th_february_even_year_but_not_leap(self):
         try:
             self.assertEqual(False, exercises.check_date(29, 2, 1900))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_valid_29th_february_lap_year_divisible_by_4(self):
         try:
             self.assertEqual(True, exercises.check_date(29, 2, 2020))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
     def test_check_date_valid_29th_february_lap_year_divisible_by_400_and_100(self):
         try:
             self.assertEqual(True, exercises.check_date(29, 2, 2000))
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `datetime` nor `calendar` modules", err.message)
+            print("You CANNOT use `datetime` nor `calendar` modules")
+            raise err
 
 
 class CheckPalindromeTestCase(unittest.TestCase):
@@ -580,7 +599,8 @@ class JoinStrings(unittest.TestCase):
             self.assertEqual("red,blue,yellow,green", result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `str.join` method.", err.message)
+            print("You CANNOT use `str.join` method.")
+            raise err
 
     def test_join_strings_case_2(self):
         try:
@@ -592,7 +612,8 @@ class JoinStrings(unittest.TestCase):
             self.assertEqual("oops", result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `str.join` method.", err.message)
+            print("You CANNOT use `str.join` method.")
+            raise err
 
     def test_join_strings_case_3(self):
         try:
@@ -604,7 +625,8 @@ class JoinStrings(unittest.TestCase):
             self.assertEqual("hello,world", result)
             self.assertListEqual(original_data, data, ORIGINAL_ARGUMENTS_MODIFIED)
         except ForbiddenError as err:
-            self.assertEqual("You CANNOT use `str.join` method.", err.message)
+            print("You CANNOT use `str.join` method.")
+            raise err
 
 
 if __name__ == '__main__':
