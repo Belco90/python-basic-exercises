@@ -17,26 +17,27 @@ def forbidden_monkey_patch(*args, **kwargs):
 
 def patch_strings(fun, cls):
     new_consts = tuple(
-        cls(c) if type(c) is str else c
-        for c in fun.func_code.co_consts)
+                   cls(c) if type(c) is str else c
+                   for c in fun.__code__.co_consts)
 
-    code = type(fun.func_code)
+    code = type(fun.__code__)
 
-    fun.func_code = code(
-        fun.func_code.co_argcount,
-        fun.func_code.co_nlocals,
-        fun.func_code.co_stacksize,
-        fun.func_code.co_flags,
-        fun.func_code.co_code,
-        new_consts,
-        fun.func_code.co_names,
-        fun.func_code.co_varnames,
-        fun.func_code.co_filename,
-        fun.func_code.co_name,
-        fun.func_code.co_firstlineno,
-        fun.func_code.co_lnotab,
-        fun.func_code.co_freevars,
-        fun.func_code.co_cellvars)
+    fun.__code__ = code(
+           fun.__code__.co_argcount,
+           fun.__code__.co_kwonlyargcount,
+           fun.__code__.co_nlocals,
+           fun.__code__.co_stacksize,
+           fun.__code__.co_flags,
+           fun.__code__.co_code,
+           new_consts,
+           fun.__code__.co_names,
+           fun.__code__.co_varnames,
+           fun.__code__.co_filename,
+           fun.__code__.co_name,
+           fun.__code__.co_firstlineno,
+           fun.__code__.co_lnotab,
+           fun.__code__.co_freevars,
+           fun.__code__.co_cellvars)
 
 
 class MyStr(str):
