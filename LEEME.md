@@ -1,6 +1,6 @@
-# Ejercicios de repaso Python 2.7
+# Ejercicios de repaso Python 3
 
-Este proyecto contiene ejercicios en Python 2.7 para practicar las nociones esenciales del lenguaje: estructuras de control (condiciones y bucles), manipulación de tipos básicos (cadenas, listas y diccionarios) y conceptos, tanto matemáticos como de programación. Se incluyen tests automáticos para que puedas comprobar si tu solución es correcta.
+Este proyecto contiene ejercicios en Python 3 para practicar las nociones esenciales del lenguaje: estructuras de control (condiciones y bucles), manipulación de tipos básicos (cadenas, listas y diccionarios) y conceptos, tanto matemáticos como de programación. Se incluyen tests automáticos para que puedas comprobar si tu solución es correcta.
 
 El objetivo es completar cada función propuesta para generar la solución deseada, ejecutando los tests hasta que no falle ninguno para saber que la solución desarrollada es válida. Los ejercicios no están ordenados de menor a mayor dificultad, puedes hacerlos en el orden que quieras (si te atascas, también puedes pasar a otro y volver a intentarlo más tarde).
 
